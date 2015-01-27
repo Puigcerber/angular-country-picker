@@ -1,6 +1,6 @@
 {
   "name": "angular-country-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AngularJS directive to generate a list of countries as options of the select element.",
   "main": "country-picker.js",
   "scripts": {
