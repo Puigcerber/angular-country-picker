@@ -24,21 +24,20 @@ angular.module('webApp', ['angular-country-picker']);
 
 ## Usage
 
-The directive is intended to be used as an attribute of the native [select](https://docs.angularjs.org/api/ng/directive/select)
- directive setting its [ngOptions](https://docs.angularjs.org/api/ng/directive/ngOptions).
- Therefore ngModel is required for this to work.
+The directive is intended to be used as an attribute of the native [select](https://docs.angularjs.org/api/ng/directive/select) 
+directive setting dynamic `<option>` elements. Therefore `ngModel` is required for this to work.
 
 ```html
 <select ng-model="selectedCountry" pvp-country-picker></select>
 ```
 
-Besides ngOptions which is set automatically by this directive, any other optional attribute of the select directive could be used.
+Excluding `ngOptions`, any other optional attribute of the select directive could still be used.
 
 ```html
-<select name="country" ng-model="selectedCountry" pvp-country-picker required></select>
+<select name="country" ng-model="selectedCountry" pvp-country-picker ng-change="onChange()" required></select>
 ```
 
-The default value to which ngModel is bound it's the two-letter country code, but this can be changed setting the
+The default value to which `ngModel` is bound it's the two-letter country code, but this can be changed setting the
 attribute to one of the following values:
 
 * alpha2: two-letter country code defined in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).

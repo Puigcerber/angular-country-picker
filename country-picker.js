@@ -10,7 +10,7 @@
  * <select ng-model="selectedCountry" pvp-country-picker="name"></select>
  */
 angular.module('angular-country-picker',[])
-  .directive('pvpCountryPicker', function() {
+  .directive('pvpCountryPicker', function($compile) {
     var countries = [
       {"name":"Afghanistan","alpha2":"AF","alpha3":"AFG","numeric":"004"},
       {"name":"Åland Islands","alpha2":"AX","alpha3":"ALA","numeric":"248"},
@@ -266,12 +266,12 @@ angular.module('angular-country-picker',[])
       controller: function($scope) {
         $scope.countries = countries;
       },
-      compile: function (tElement, tAttrs) {
-        if(! tAttrs.pvpCountryPicker) {
-          tAttrs.pvpCountryPicker = 'alpha2';
+      link: function(scope, iElement, iAttrs) {
+        if(! iAttrs.pvpCountryPicker) {
+          iAttrs.pvpCountryPicker = 'alpha2';
         }
-        var ngOptions = 'country.' + tAttrs.pvpCountryPicker + ' as country.name for country in countries';
-        tAttrs.$set('ngOptions',  ngOptions);
+        var options = '<option ng-repeat="country in countries" value="{{country.' + iAttrs.pvpCountryPicker + '}}">{{country.name}}</option>';
+        iElement.append($compile(options)(scope));
       },
       restrict: 'A'
     };
