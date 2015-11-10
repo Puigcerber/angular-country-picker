@@ -2,7 +2,7 @@
   "name": "angular-country-picker",
   "version": "1.2.0",
   "authors": [
-    "Pablo Villoslada Puigcerber <pablo85@gmail.com>"
+    "Pablo Villoslada Puigcerber <pablo85@gmail.com> (http://www.pablovilloslada.com/)"
   ],
   "description": "AngularJS directive to generate a list of countries as options of the select element.",
   "main": "country-picker.js",
