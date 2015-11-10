@@ -1,8 +1,8 @@
 {
   "name": "angular-country-picker",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "AngularJS directive to generate a list of countries as options of the select element.",
-  "main": "country-picker.js",
+  "main": "index.js",
   "scripts": {
     "build": "uglifyjs country-picker.js -o country-picker.min.js",
     "test": "karma start"
