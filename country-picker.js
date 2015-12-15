@@ -10,8 +10,7 @@
  * <select ng-model="selectedCountry" pvp-country-picker="name"></select>
  */
 angular.module('angular-country-picker',[])
-  .directive('pvpCountryPicker', function($compile) {
-    var countries = [
+  .value('pvpCountries',[
       {"name":"Afghanistan","alpha2":"AF","alpha3":"AFG","numeric":"004"},
       {"name":"Åland Islands","alpha2":"AX","alpha3":"ALA","numeric":"248"},
       {"name":"Albania","alpha2":"AL","alpha3":"ALB","numeric":"008"},
@@ -260,11 +259,12 @@ angular.module('angular-country-picker',[])
       {"name":"Western Sahara","alpha2":"EH","alpha3":"ESH","numeric":"732"},
       {"name":"Yemen","alpha2":"YE","alpha3":"YEM","numeric":"887"},
       {"name":"Zambia", "alpha2":"ZM","alpha3":"ZMB","numeric":"894"},
-      {"name":"Zimbabwe","alpha2":"ZW","alpha3":"ZWE","numeric":"716"}];
-
+      {"name":"Zimbabwe","alpha2":"ZW","alpha3":"ZWE","numeric":"716"}
+  ])
+  .directive('pvpCountryPicker', function($compile, pvpCountries) {
     return {
       controller: function($scope) {
-        $scope.countries = countries;
+        $scope.countries = pvpCountries;
       },
       link: function(scope, iElement, iAttrs) {
         if(! iAttrs.pvpCountryPicker) {
