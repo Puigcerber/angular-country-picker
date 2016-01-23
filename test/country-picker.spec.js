@@ -34,3 +34,19 @@ describe('Directive: pvpCountryPicker', function () {
   });
 
 });
+
+describe('Service: pvpCountries', function () {
+
+  beforeEach(module('angular-country-picker'));
+
+  var pvpCountries;
+  beforeEach(inject(function(_pvpCountries_){
+    pvpCountries = _pvpCountries_;
+  }));
+
+  it('should be an array of countries', function() {
+    expect(angular.isArray(pvpCountries)).toBe(true);
+    expect(pvpCountries.length).toBe(249);
+  });
+
+});
