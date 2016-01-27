@@ -56,16 +56,6 @@ attribute to one of the following values:
 <select ng-model="selectedCountry" pvp-country-picker="name"></select>
 ```
 
-## Testing
-
-To run the tests:
-
-```bash
-$ npm install && bower install
-$ npm install -g karma-cli
-$ npm run test
-```
-
 ## See also
 
 [ISO 3166](http://www.iso.org/iso/country_codes.htm) is the International Standard for country codes and codes for their subdivisions.
