@@ -32,7 +32,8 @@ angular.module('webApp', ['angular-country-picker']);
 ## Usage
 
 The directive is intended to be used as an attribute of the native [select](https://docs.angularjs.org/api/ng/directive/select) 
-directive setting dynamic `<option>` elements. Therefore `ngModel` is required for this to work.
+directive setting its [ngOptions](https://docs.angularjs.org/api/ng/directive/ngOptions). 
+Therefore `ngModel` is required for this to work.
 
 ```html
 <select ng-model="selectedCountry" pvp-country-picker></select>

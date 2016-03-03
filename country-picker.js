@@ -276,16 +276,23 @@ angular.module('angular-country-picker',[])
     };
   })
   .directive('pvpCountryPicker', function($compile) {
+    var PRIORITY = 1;
     return {
+      priority: PRIORITY,
+      terminal: true,
       controller: function($scope, pvpCountries) {
         $scope.countries = pvpCountries.getCountries();
       },
-      link: function(scope, iElement, iAttrs) {
-        if(! iAttrs.pvpCountryPicker) {
-          iAttrs.pvpCountryPicker = 'alpha2';
+      compile: function (tElement, tAttrs) {
+        if(! tAttrs.pvpCountryPicker) {
+          tAttrs.pvpCountryPicker = 'alpha2';
         }
-        var options = '<option ng-repeat="country in countries" value="{{country.' + iAttrs.pvpCountryPicker + '}}">{{country.name}}</option>';
-        iElement.append($compile(options)(scope));
+        var ngOptions = 'country.' + tAttrs.pvpCountryPicker + ' as country.name for country in countries';
+        tAttrs.$set('ngOptions',  ngOptions);
+
+        return function postLink(scope, iElement) {
+          $compile(iElement, null, PRIORITY)(scope);
+        };
       },
       restrict: 'A'
     };

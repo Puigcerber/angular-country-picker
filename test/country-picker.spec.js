@@ -30,7 +30,7 @@ describe('Directive: pvpCountryPicker', function () {
     scope.$digest();
     var options = element.find('option');
     expect(options.length).toBe(250);
-    expect(options.eq(0).attr('value')).toBe('? undefined:undefined ?');
+    expect(options.eq(0).attr('value')).toBe('?');
   });
 
 });
