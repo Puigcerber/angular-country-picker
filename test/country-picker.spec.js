@@ -3,7 +3,7 @@
 describe('Directive: pvpCountryPicker', function () {
 
   // load the directive's module
-  beforeEach(module('angular-country-picker'));
+  beforeEach(module('puigcerber.countryPicker'));
 
   var element,
     scope;
@@ -30,23 +30,68 @@ describe('Directive: pvpCountryPicker', function () {
     scope.$digest();
     var options = element.find('option');
     expect(options.length).toBe(250);
-    expect(options.eq(0).attr('value')).toBe('? undefined:undefined ?');
+    expect(options.eq(0).attr('value')).toBe('?');
   });
 
 });
 
-describe('Service: pvpCountries', function () {
+describe('Provider: pvpCountries', function () {
 
-  beforeEach(module('angular-country-picker'));
+  beforeEach(module('puigcerber.countryPicker'));
+
+  var pvpCountriesProvider;
+  beforeEach(function() {
+    module(function(_pvpCountriesProvider_) {
+      pvpCountriesProvider = _pvpCountriesProvider_;
+    });
+  });
 
   var pvpCountries;
   beforeEach(inject(function(_pvpCountries_){
     pvpCountries = _pvpCountries_;
   }));
 
-  it('should be an array of countries', function() {
-    expect(angular.isArray(pvpCountries)).toBe(true);
-    expect(pvpCountries.length).toBe(249);
+  it('should do something', function() {
+    expect(!!pvpCountriesProvider).toBe(true);
+    expect(!!pvpCountries).toBe(true);
+  });
+
+  describe('Provider method: setCountries', function () {
+
+    it('should expose a method to set a custom list of countries', function() {
+      expect(pvpCountriesProvider.setCountries).toBeDefined();
+      expect(angular.isFunction(pvpCountriesProvider.setCountries)).toBe(true);
+    });
+
+    it('should set the list of custom countries', function() {
+      var countries = [
+        { name: 'Abkhazia', alpha2: 'AB'},
+        { name: 'Kosovo', alpha2: 'XK'},
+        { name: 'Nagorno-Karabakh', alpha2: 'NK'},
+        { name: 'Northern Cyprus', alpha2: 'KK'},
+        { name: 'Somaliland', alpha2: 'JS'},
+        { name: 'South Ossetia', alpha2: 'XI'},
+        { name: 'Transnistria', alpha2: 'PF'}
+      ];
+      pvpCountriesProvider.setCountries(countries);
+      expect(pvpCountries.getCountries()).toBe(countries);
+    });
+
+  });
+
+  describe('Service method: getCountries', function () {
+
+    it('should expose a method to get an array of countries', function() {
+      expect(pvpCountries.getCountries).toBeDefined();
+      expect(angular.isFunction(pvpCountries.getCountries)).toBe(true);
+    });
+
+    it('should retrieve the array of countries', function() {
+      var countries = pvpCountries.getCountries();
+      expect(angular.isArray(countries)).toBe(true);
+      expect(countries.length).toBe(249);
+    });
+
   });
 
 });

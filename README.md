@@ -23,16 +23,17 @@ Then you have to include it in your HTML:
 <script src="node_modules/angular-country-picker/country-picker.js"></script>
 ```
 
-And inject the module `angular-country-picker` as a dependency of your application:
+And inject the module `puigcerber.countryPicker` as a dependency of your application:
 
 ```js
-angular.module('webApp', ['angular-country-picker']);
+angular.module('webApp', ['puigcerber.countryPicker']);
 ```
 
 ## Usage
 
 The directive is intended to be used as an attribute of the native [select](https://docs.angularjs.org/api/ng/directive/select) 
-directive setting dynamic `<option>` elements. Therefore `ngModel` is required for this to work.
+directive setting its [ngOptions](https://docs.angularjs.org/api/ng/directive/ngOptions). 
+Therefore `ngModel` is required for this to work.
 
 ```html
 <select ng-model="selectedCountry" pvp-country-picker></select>
@@ -56,7 +57,30 @@ attribute to one of the following values:
 <select ng-model="selectedCountry" pvp-country-picker="name"></select>
 ```
 
+### Config
+
+The country provider can be configured to set a custom list of countries.
+
+```js
+angular.module('webApp', ['puigcerber.countryPicker'])
+  .config(function(pvpCountriesProvider) {
+    pvpCountriesProvider.setCountries([
+      { name: 'Abkhazia', alpha2: 'AB'},
+      { name: 'Kosovo', alpha2: 'XK'},
+      { name: 'Nagorno-Karabakh', alpha2: 'NK'},
+      { name: 'Northern Cyprus', alpha2: 'KK'},
+      { name: 'Somaliland', alpha2: 'JS'},
+      { name: 'South Ossetia', alpha2: 'XI'},
+      { name: 'Transnistria', alpha2: 'PF'}
+    ]);
+  });
+```
+
 ## See also
 
 [ISO 3166](http://www.iso.org/iso/country_codes.htm) is the International Standard for country codes and codes for their subdivisions.
 Currently 249 countries, territories, or areas of geographical interest are assigned official codes in ISO 3166-1.
+
+## License
+
+MIT © [Pablo Villoslada Puigcerber](http://pablovilloslada.com)
