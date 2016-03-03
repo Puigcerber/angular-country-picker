@@ -23,10 +23,10 @@ Then you have to include it in your HTML:
 <script src="node_modules/angular-country-picker/country-picker.js"></script>
 ```
 
-And inject the module `angular-country-picker` as a dependency of your application:
+And inject the module `puigcerber.countryPicker` as a dependency of your application:
 
 ```js
-angular.module('webApp', ['angular-country-picker']);
+angular.module('webApp', ['puigcerber.countryPicker']);
 ```
 
 ## Usage
@@ -62,7 +62,7 @@ attribute to one of the following values:
 The country provider can be configured to set a custom list of countries.
 
 ```js
-angular.module('webApp', ['angular-country-picker'])
+angular.module('webApp', ['puigcerber.countryPicker'])
   .config(function(pvpCountriesProvider) {
     pvpCountriesProvider.setCountries([
       { name: 'Abkhazia', alpha2: 'AB'},
@@ -80,3 +80,7 @@ angular.module('webApp', ['angular-country-picker'])
 
 [ISO 3166](http://www.iso.org/iso/country_codes.htm) is the International Standard for country codes and codes for their subdivisions.
 Currently 249 countries, territories, or areas of geographical interest are assigned official codes in ISO 3166-1.
+
+## License
+
+MIT © [Pablo Villoslada Puigcerber](http://pablovilloslada.com)

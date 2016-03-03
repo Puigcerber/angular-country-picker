@@ -9,7 +9,7 @@
  * @example
  * <select ng-model="selectedCountry" pvp-country-picker="name"></select>
  */
-angular.module('angular-country-picker',[])
+angular.module('puigcerber.countryPicker',[])
   .provider('pvpCountries', function pvpCountries() {
     var countries = [
       {"name":"Afghanistan","alpha2":"AF","alpha3":"AFG","numeric":"004"},

@@ -3,7 +3,7 @@
 describe('Directive: pvpCountryPicker', function () {
 
   // load the directive's module
-  beforeEach(module('angular-country-picker'));
+  beforeEach(module('puigcerber.countryPicker'));
 
   var element,
     scope;
@@ -37,7 +37,7 @@ describe('Directive: pvpCountryPicker', function () {
 
 describe('Provider: pvpCountries', function () {
 
-  beforeEach(module('angular-country-picker'));
+  beforeEach(module('puigcerber.countryPicker'));
 
   var pvpCountriesProvider;
   beforeEach(function() {
