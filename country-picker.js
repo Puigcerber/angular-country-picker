@@ -275,14 +275,14 @@ angular.module('puigcerber.countryPicker',[])
       }
     };
   })
-  .directive('pvpCountryPicker', function($compile) {
+  .directive('pvpCountryPicker', ['$compile', function($compile) {
     var PRIORITY = 1;
     return {
       priority: PRIORITY,
       terminal: true,
-      controller: function($scope, pvpCountries) {
+      controller: ['$scope', 'pvpCountries', function($scope, pvpCountries) {
         $scope.countries = pvpCountries.getCountries();
-      },
+      }],
       compile: function (tElement, tAttrs) {
         if(! tAttrs.pvpCountryPicker) {
           tAttrs.pvpCountryPicker = 'alpha2';
@@ -296,4 +296,4 @@ angular.module('puigcerber.countryPicker',[])
       },
       restrict: 'A'
     };
-  });
+  }]);
