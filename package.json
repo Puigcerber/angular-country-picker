@@ -1,6 +1,6 @@
 {
   "name": "angular-country-picker",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "AngularJS directive to generate a list of countries as options of the select element.",
   "author": "Pablo Villoslada Puigcerber <pablo85@gmail.com> (http://pablovilloslada.com/)",
   "main": "index.js",
@@ -27,15 +27,15 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.7.2"
+    "angular": "^1.8.3"
   },
   "devDependencies": {
-    "angular-mocks": "^1.7.2",
-    "jasmine-core": "^3.1.0",
+    "angular-mocks": "^1.8.3",
+    "jasmine-core": "^4.3.0",
     "jshint": "^2.9.1",
-    "karma": "^2.0.4",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.2",
-    "uglify-js": "^2.4.16"
+    "karma": "^6.4.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-jasmine": "^5.1.0",
+    "uglify-js": "^3.16.3"
   }
 }
