@@ -4,13 +4,7 @@ AngularJS directive to generate a list of countries as options of the select ele
 
 ## Installation
 
-You can install the directive using [Bower](http://bower.io/):
-
-```bash
-$ bower install angular-country-picker
-```
-
-Or [npm](https://www.npmjs.com/):
+You can install the directive using [npm](https://www.npmjs.com/):
 
 ```bash
 $ npm install angular-country-picker
@@ -19,7 +13,6 @@ $ npm install angular-country-picker
 Then you have to include it in your HTML:
 
 ```html
-<script src="bower_components/angular-country-picker/country-picker.js"></script>
 <script src="node_modules/angular-country-picker/country-picker.js"></script>
 ```
 

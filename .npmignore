@@ -1,10 +1,7 @@
 .github/
-.idea/
-bower_components/
 test/
 .editorconfig
 .jshintrc
 .npmignore
-bower.json
 karma.conf.js
 package-lock.json
