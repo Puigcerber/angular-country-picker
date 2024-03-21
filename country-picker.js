@@ -168,7 +168,7 @@ angular.module('puigcerber.countryPicker',[])
       {"name":"Namibia","alpha2":"NA","alpha3":"NAM","numeric":"516"},
       {"name":"Nauru","alpha2":"NR","alpha3":"NRU","numeric":"520"},
       {"name":"Nepal","alpha2":"NP","alpha3":"NPL","numeric":"524"},
-      {"name":"Netherlands (the)","alpha2":"NL","alpha3":"NLD","numeric":"528"},
+      {"name":"Netherlands (Kingdom of the)","alpha2":"NL","alpha3":"NLD","numeric":"528"},
       {"name":"New Caledonia","alpha2":"NC","alpha3":"NCL","numeric":"540"},
       {"name":"New Zealand","alpha2":"NZ","alpha3":"NZL","numeric":"554"},
       {"name":"Nicaragua","alpha2":"NI","alpha3":"NIC","numeric":"558"},
